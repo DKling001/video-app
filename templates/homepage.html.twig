@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<h1>These are our latest videos</h1>
+{% for slug, item in videos %}
+    <li>{% block loop_item %}<a href="/videos/{{ slug }}">{{ item.name }}</a>{% endblock %}</li>
+{% endfor %}
+{% endblock %}
+
+{# here you can use the Twig variable 'videos' that gets passed from the controller #}
